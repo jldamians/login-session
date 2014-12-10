@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('loginCtrl', ['$scope','loginFactory', function ($scope, loginFactory) {
+app.controller('LoginController', ['$scope','loginFactory', function ($scope, loginFactory) {
     $scope.msgtxt = '';
 
     $scope.login = function(data){

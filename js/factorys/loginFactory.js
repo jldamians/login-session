@@ -1,16 +1,16 @@
 'use strict'
 
-app.factory('loginFactory', function($http, $location, sessionFactory){
+app.factory('loginFactory', function($location, sessionFactory){
 	return {
 		login: function(p_data, p_scope){
-			sessionFactory.generar(p_data).then(
+			sessionFactory.create(p_data).then(
 				function(respuesta){
 					var id = respuesta.data ;
 					if (id) {
 						$location.path('/home') ;
 					}
 					else{
-						p_scope.msgtxt = 'Datos incorrectos: -Usuario- ó -Clave-' ;
+						p_scope.msgtxt = 'Datos incorrectos: Usuario ó Clave' ;
 						$location.path('/login') ;
 					}
 				}
@@ -29,6 +29,9 @@ app.factory('loginFactory', function($http, $location, sessionFactory){
 					var id = respuesta.data ;
 					if (!id) {
 						$location.path('/login') ;
+					}
+					else{
+						console.log(id);
 					}
 				}
 			);

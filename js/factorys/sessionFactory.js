@@ -2,17 +2,17 @@
 
 app.factory('sessionFactory', ['$http', function($http){
     return {
-        generar: function(datos){
-            $promesa = $http.post('data/user.php', datos) ;
+        create: function(data){
+            $promesa = $http.post('data/ajax/usuario/login.php', data) ;
             return $promesa ;
         },
         get: function(){
-            $promesa = $http.get('data/check_session.php');
+            $promesa = $http.get('data/ajax/usuario/isLogin.php');
             return $promesa ;
         },
         destroy: function(){
-            $promesa = $http.get('data/destroy_session.php');
+            $promesa = $http.get('data/ajax/usuario/logout.php');
             return $promesa ;
-        },
+        }
     };
 }]);

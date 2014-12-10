@@ -1,15 +1,15 @@
 'use strict';
 
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute']);
 
 app.config(['$routeProvider', function($ruta) {
 	$ruta.when('/login', {
 		templateUrl: 'partials/login.html',
-		controller: 'loginCtrl'
+		controller: 'LoginController'
 	});
 	$ruta.when('/home', {
 		templateUrl: 'partials/home.html',
-		controller: 'homeCtrl'
+		controller: 'HomeController'
 	});
 	$ruta.otherwise({
 		redirectTo: '/login'
@@ -25,9 +25,9 @@ app.run(['$rootScope', '$location', 'loginFactory', function($root, $location, l
 	// $on es un desencadenador de eventos
 	// $routeChangeStart es un evento que se dispara cuando se canbia la ruta (url)
 	$root.$on('$routeChangeStart', function(event, oldUrl, newUrl){
-		/*console.log(event) ;
-		console.log(oldUrl) ;
-		console.log(newUrl) ;*/
+		//console.log(event) ;
+		//console.log(oldUrl) ;
+		//console.log(newUrl) ;
 		if ( rutasPermitidas.indexOf($location.path()) != -1  ) {
 			loginFactory.islogged();
 		};

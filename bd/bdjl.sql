@@ -2,7 +2,7 @@
 MySQL Backup
 Source Server Version: 5.6.20
 Source Database: bdjl
-Date: 10/12/2014 11:17:47
+Date: 10/12/2014 15:50:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,9 +24,12 @@ CREATE TABLE `persona` (
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `dni` char(8) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `nombres` varchar(255) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `profesion` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `correo` varchar(100) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `usuario` varchar(255) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `clave` varchar(255) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `clave` varchar(32) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -72,6 +75,24 @@ SELECT
 	persona.dni
 FROM persona
 WHERE  persona.id = id;
+END
+;;
+DELIMITER ;
+
+-- ----------------------------
+--  Procedure definition for `usp_get_usuario_by_id`
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `usp_get_usuario_by_id`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usp_get_usuario_by_id`(id bigint(20))
+BEGIN
+	#Routine body goes here...
+	SELECT *
+	FROM usuario
+	WHERE usuario.id = id
+
+;
+	-- usp_get_usuario_by_id
 END
 ;;
 DELIMITER ;
@@ -132,4 +153,4 @@ DELIMITER ;
 --  Records 
 -- ----------------------------
 INSERT INTO `persona` VALUES ('1','José Luis Damián Saavedra','46003328'), ('2','José Alberto Damián Saavedra','46003327'), ('3','Juan Jiner Delgado Chavez','46003326'), ('4','Juan Jose Matamoros Taype','46003325'), ('5','Yuri Mao Reategui Pinedo','46003324'), ('6','Natividad Saavedra Chavez','12873465');
-INSERT INTO `usuario` VALUES ('1','José Luis Damián Saavedra','saavedrajl','123456'), ('2','Jose Alberto Damian Saavedra','saavedraja','123456');
+INSERT INTO `usuario` VALUES ('1','46003328','José Luis Damián Saavedra','Ingeniero de Sistemas','jlds161089@gmail.com','saavedrajl','e10adc3949ba59abbe56e057f20f883e'), ('2','46003327','Jose Alberto Damian Saavedra','Tecnico en Computacion e Informatica','alberto_17jads@hotmail.com','saavedraja','e10adc3949ba59abbe56e057f20f883e');

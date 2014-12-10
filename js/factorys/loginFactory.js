@@ -1,6 +1,6 @@
 'use strict'
 
-app.factory('loginFactory', function($location, sessionFactory){
+app.factory('loginFactory', function($location, sessionFactory, $http){
 	return {
 		login: function(p_data, p_scope){
 			sessionFactory.create(p_data).then(

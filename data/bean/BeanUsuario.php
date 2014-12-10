@@ -7,6 +7,9 @@
 		private $nombres ;
 		private $usuario ;
 		private $clave ;
+		private $dni ;
+		private $profesion ;
+		private $correo ;
 		//Propiedades
 		public function setId($id){
 			$this->id=$id;
@@ -36,13 +39,37 @@
 			return $this->clave;
 		}
 
+		public function setDni($dni){
+			$this->dni = $dni;
+		}
+		public function getDni(){
+			return $this->dni;
+		}
+
+		public function setProfesion($profesion){
+			$this->profesion = $profesion;
+		}
+		public function getProfesion(){
+			return $this->profesion;
+		}
+
+		public function setCorreo($correo){
+			$this->correo = $correo;
+		}
+		public function getCorreo(){
+			return $this->correo;
+		}
+
 		public function toString(){
 			$str = "" ;
 
 			$str.= isset($this->id) 		? $this->id . "/" : "" ;
+			$str.= isset($this->dni) 		? $this->dni . "/" : "" ;
+			$str.= isset($this->clave) 		? $this->clave . "/" : "" ;
+			$str.= isset($this->correo) 	? $this->correo . "/" : "" ;
 			$str.= isset($this->nombres) 	? $this->nombres . "/" : "" ;
 			$str.= isset($this->usuario) 	? $this->usuario . "/" : "" ;
-			$str.= isset($this->clave) 		? $this->clave . "/" : "" ;
+			$str.= isset($this->profesion) 	? $this->profesion . "/" : "" ;
 
 			$str = trim($str, "/") ;
 

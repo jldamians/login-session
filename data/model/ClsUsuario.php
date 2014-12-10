@@ -5,7 +5,7 @@
 		{
 			$this->conn = $cnx;
 		}
-		# Método Insertar
+		# Método Logearse
 		public function login_by_usuario_clave($beanUsario)
 		{
 			$usuario = $beanUsario->getUsuario();
@@ -19,5 +19,17 @@
 
 			return $data;
 		}
+		# Método Buscar por Codigo
+		public function get_by_codigo($beanUsario)
+		{
+			$id = $beanUsario->getId();
 
+			$this->query = "CALL usp_get_usuario_by_id(".$id.")";
+
+			$this->execute_query();
+
+			$data = $this->rows ;
+
+			return $data;
+		}
 	}

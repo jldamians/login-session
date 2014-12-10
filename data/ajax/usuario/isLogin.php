@@ -6,7 +6,7 @@
 	// ya sea para acceder a ellas o para almacenar valores
 	session_start();
 
-	// verificamos si la session "usuario" tiene datos
+	// verificamos si la session "usuario" contine algun objeto
 	if( isset($_SESSION['usuario']) ) {
 		print $_SESSION['usuario']->getId();
 	}

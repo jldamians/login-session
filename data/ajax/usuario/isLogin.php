@@ -7,6 +7,6 @@
 	session_start();
 
 	// verificamos si la session "usuario" contine algun objeto
-	if( isset($_SESSION['usuario']) ) {
-		print $_SESSION['usuario']->getId();
+	if( isset($_SESSION['id_usuario']) ) {
+		print $_SESSION['id_usuario'] ;
 	}

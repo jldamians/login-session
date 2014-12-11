@@ -2,7 +2,7 @@
 MySQL Backup
 Source Server Version: 5.6.20
 Source Database: bdjl
-Date: 10/12/2014 15:50:41
+Date: 11/12/2014 16:56:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;

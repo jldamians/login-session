@@ -1,5 +1,27 @@
 <form role="form" name="form1" ng-submit="login(user)">
-    <p>
+<fieldset>
+    <legend>Bienvenido: {{user.usuario}}</legend>
+    <div class="fila-completa">
+        <div class="fila-icono">
+            <span class="icon-user3"></span>
+        </div>
+
+        <div class="fila-text">
+            <input type="text" placeholder="Ingrese Usuario: saavedrajl"  ng-model="user.usuario" required>
+        </div>
+    </div>
+
+    <div class="fila-completa">
+        <div class="fila-icono">
+            <span class="icon-key3"></span>
+        </div>
+
+        <div class="fila-text">
+            <input type="password" placeholder="Ingrese Clave: 123456" ng-model="user.clave" required>
+        </div>
+    </div>
+</fieldset>
+    <!--<p>
         Bienvenido :
         <span>{{user.usuario}}</span>
     </p>
@@ -12,7 +34,7 @@
     <div class="form-group">
         <label>Clave:</label>
         <input type="password" placeholder="Ingrese Clave: 123456" ng-model="user.clave" required>
-    </div>
+    </div>-->
 
     <button class="btn btn-default" type="submit" ng-disabled="form1.$invalid">Ingresar</button>
 

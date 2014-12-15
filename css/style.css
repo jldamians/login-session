@@ -1,26 +1,67 @@
-*{
+*, *:before, *:after {
 	        box-sizing: border-box;
 	    -ms-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
-label{
-	display: inline-block;
-	width: 25%;
-}
-input{
-	width: 70%;
-	padding: 5px 8px;
-}
-button{
-	padding: 5px 10px;
+
+body{
+	font-family: arial;
 }
 
-.form-group{
-	padding: 5px;
+.fila-completa{
+	width: 100%;
+	height: 2.35rem;
+	clear: both;
+}
+
+.fila-icono{
+	background: none repeat scroll 0% 0% #F2F2F2;
+	border-color: #CCC;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px 0px 1px 1px;
+	font-size: 0.77778rem;
+	height: 2.35rem;
+	line-height: 2.35rem;
+	width: 15%;
+	float: left;
+}
+
+.fila-text{
+	width: 85%;
+	float: right;
+}
+
+input[type="text"], input[type="password"]
+{
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
+	color: rgba(0, 0, 0, 0.70);
+	display: block;
+	font-size: 0.875rem;
+	height: 2.35rem;
+	margin: 0px 0px 1rem;
+	padding: 0.5rem;	
+	transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+	width: 100%;
+	
+	font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus
+{
+	box-shadow: 0px 0px 5px #999;
+	border-color: #999;
+
+	background: none repeat scroll 0% 0% #FAFAFA;
+	border-color: #999;
+	outline: medium none;
 }
 
 form{
 	margin: 0 auto ;
-	width: 350px ;
+	width: 30% ;
 }
